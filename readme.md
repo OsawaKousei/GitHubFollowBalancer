@@ -138,11 +138,3 @@ npm run format
 | HTTP Client    | @octokit/rest  | GitHub API クライアント                              |
 | Shell/Process  | execa          | プロセス実行                                         |
 | Testing        | vitest         | 高速な単体テストランナー                             |
-
-## 📝 ライセンス
-
-MIT
-
-## 👤 作者
-
-OsawaKousei
