@@ -1,5 +1,5 @@
 {
-  "name": "typescript-cli-app-template",
+  "name": "githubfollowbalancer",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
     "format": "prettier --write ."
   },
   "keywords": [],
-  "author": "n622",
+  "author": "OsawaKousei",
   "license": "MIT",
   "type": "module",
   "devDependencies": {
