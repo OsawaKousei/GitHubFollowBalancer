@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    /* 基本設定 */
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+
+    /* 厳格な型チェック (Strictness) */
+    "strict": true,
+    // 暗黙のanyを禁止（AIが型をサボるのを防ぐ）
+    "noImplicitAny": true,
+    // 関数が値を返さないパスを禁止
+    "noImplicitReturns": true,
+    // switch文（禁止ですが一応）のフォールスルー禁止
+    "noFallthroughCasesInSwitch": true,
+
+    /* さらなる安全性 (Safety) */
+    // 配列やオブジェクトへのアクセス結果に自動的に `undefined` を付与する
+    // これにより `arr[0].id` のようなコードで「存在しない可能性」を強制的にチェックさせる
+    "noUncheckedIndexedAccess": true,
+    // オプショナルなプロパティに `undefined` を明示的に代入することを禁止
+    "exactOptionalPropertyTypes": true,
+
+    /* 互換性・その他 */
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "include": ["src/**/*"]
+}
