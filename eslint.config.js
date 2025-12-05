@@ -1,9 +1,12 @@
 // eslint.config.js
 import tseslint from 'typescript-eslint';
 
-export default tseslint.defineConfig(
+export default tseslint.config(
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
+  {
+    ignores: ['dist/**', 'node_modules/**', 'coverage/**'],
+  },
   {
     rules: {
       /* ==========================================================
@@ -13,7 +16,16 @@ export default tseslint.defineConfig(
       'prefer-const': 'error', // 可能な限りconstを強制
       eqeqeq: ['error', 'always'], // 厳密等価演算子 (===) の強制
       'func-style': ['error', 'expression'], // 関数宣言ではなく関数式を強制
-      'no-unused-vars': ['error', { args: 'none', ignoreRestSiblings: true }], // 未使用変数の禁止（引数は除外）
+      'no-unused-vars': 'off', // TypeScript用のルールを使用するため無効化
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          args: 'all',
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+        },
+      ], // 未使用変数の禁止（_で始まる変数は除外）
 
       /* ==========================================================
         TypeScript特有のスタイル統一
@@ -83,8 +95,8 @@ export default tseslint.defineConfig(
          ========================================================== */
       // ネストの深さを制限（2階層まで）
       'max-depth': ['error', 2],
-      // 関数の引数数を制限（3つ以上はオブジェクトで受けるルールを間接的に強制）
-      'max-params': ['error', 2],
+      // 関数の引数数を制限（4つ以上はオブジェクトで受けるルールを間接的に強制）
+      'max-params': ['error', 3],
       // console.logの警告（デバッグコードの混入防止）
       'no-console': ['warn', { allow: ['warn', 'error', 'info'] }],
     },
