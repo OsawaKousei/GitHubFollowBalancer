@@ -1,4 +1,4 @@
-import { ok, err, Result } from 'neverthrow';
+import { ok, err, type Result } from 'neverthrow';
 import { ConfigSchema, type Config } from '../domain/schemas.js';
 import { parseWhitelist } from '../domain/logic.js';
 

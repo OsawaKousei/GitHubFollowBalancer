@@ -4,14 +4,12 @@ import {
   option,
   string,
   positional,
-  Type,
+  type Type,
   optional,
 } from 'cmd-ts';
 import { text, select, isCancel, intro, outro } from '@clack/prompts';
-import { ResultAsync, ok, err } from 'neverthrow';
 import ora from 'ora';
 import pc from 'picocolors';
-import { z } from 'zod';
 
 import { LANGUAGE, type Language, APP_NAME } from './constants.js';
 import { createGreeting, LanguageSchema } from './logic.js';

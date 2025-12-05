@@ -32,7 +32,8 @@ describe('loadConfig', () => {
   it('WHITELISTが未設定の場合は空の配列を使用する', () => {
     process.env.GITHUB_TOKEN = 'ghp_test_token_123456789';
     process.env.GITHUB_USERNAME = 'testuser';
-    delete process.env.WHITELIST;
+    const { WHITELIST: _, ...envWithoutWhitelist } = process.env;
+    process.env = envWithoutWhitelist;
 
     const result = loadConfig();
 
@@ -43,7 +44,8 @@ describe('loadConfig', () => {
   });
 
   it('GITHUB_TOKENが未設定の場合はエラーを返す', () => {
-    delete process.env.GITHUB_TOKEN;
+    const { GITHUB_TOKEN: _, ...envWithoutToken } = process.env;
+    process.env = envWithoutToken;
     process.env.GITHUB_USERNAME = 'testuser';
 
     const result = loadConfig();
@@ -56,7 +58,8 @@ describe('loadConfig', () => {
 
   it('GITHUB_USERNAMEが未設定の場合はエラーを返す', () => {
     process.env.GITHUB_TOKEN = 'ghp_test_token_123456789';
-    delete process.env.GITHUB_USERNAME;
+    const { GITHUB_USERNAME: _, ...envWithoutUsername } = process.env;
+    process.env = envWithoutUsername;
 
     const result = loadConfig();
 

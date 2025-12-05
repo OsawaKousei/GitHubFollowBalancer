@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ok, err, Result } from 'neverthrow';
+import { ok, err, type Result } from 'neverthrow';
 import { match } from 'ts-pattern';
 import { getHours } from 'date-fns'; // ✅ date-fns: 日付操作
 import { LANGUAGE, type Language } from './constants.js';

@@ -1,5 +1,3 @@
-import { ok, err, Result } from 'neverthrow';
-
 // ✅ BasicGuideline 5.4: Pure Function
 // 片思いユーザーの特定 (A - B)
 // following: フォロー中のユーザーリスト

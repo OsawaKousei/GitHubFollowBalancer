@@ -9,7 +9,7 @@ vi.mock('execa');
 describe('src/effects.ts', () => {
   it('logToSystem calls execa with correct arguments', async () => {
     // execa のモック実装（成功するPromiseを返す）
-    // 注意: execa v9以降は戻り値の構造が異なる場合があるため、anyや型アサーションが必要な場合があります
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any -- モックの戻り値型が複雑なため
     vi.mocked(execa).mockResolvedValue({ stdout: '' } as any);
 
     const message = 'Test Log Message';
